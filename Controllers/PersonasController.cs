@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Web_API.Controllers;
-using Web_API.Database;
-using Web_API.Models;
-
-namespace Web_API.Controllers
+using WEB_API.Models;
+using WEBAPI.Database;
+namespace WEB_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
     public class PersonasController : Controller
     {
         private readonly AppDbContext _context;
@@ -15,6 +13,10 @@ namespace Web_API.Controllers
         public PersonasController(AppDbContext context)
         {
             _context = context;
+        }
+        public IActionResult Index()
+        {
+            return View();
         }
     }
 }
